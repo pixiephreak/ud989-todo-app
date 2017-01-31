@@ -20,6 +20,7 @@ var app = app || {};
 			'click .toggle': 'toggleCompleted',
 			'click .edit-btn': 'edit',
 			'click .destroy': 'clear',
+			'click .priority-btn': 'priority',
 			'keypress .edit': 'updateOnEnter',
 			'keydown .edit': 'revertOnEscape',
 			'blur .edit': 'close'
@@ -73,6 +74,13 @@ var app = app || {};
 		// Switch this view into `"editing"` mode, displaying the input field.
 		edit: function () {
 			this.$el.addClass('editing');
+			this.$input.focus();
+		},
+
+
+		// Switch this view into `"priority"` mode, displaying the input field.
+		priority: function () {
+			this.$el.addClass('priority');
 			this.$input.focus();
 		},
 
